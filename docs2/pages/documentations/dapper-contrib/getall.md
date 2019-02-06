@@ -1,3 +1,8 @@
+---
+PermaID: 1000195
+Name: GetAll
+---
+
 # Dapper Contrib - GetAll
 
 ## Description

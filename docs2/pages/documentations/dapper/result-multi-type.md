@@ -1,3 +1,8 @@
+---
+PermaID: 1000182
+Name: Result Multi Type
+---
+
 # Dapper - Result Multi-Type 
 
 ## Description

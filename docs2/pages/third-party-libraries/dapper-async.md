@@ -1,3 +1,8 @@
+---
+PermaID: 1000203
+Name: Async
+---
+
 # Dapper-Async
 
 ## Overview

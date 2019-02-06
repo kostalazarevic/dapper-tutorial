@@ -1,3 +1,8 @@
+---
+PermaID: 1000207
+Name: FluentMap
+---
+
 # Dapper.FluentMap
 
 ## Overview

@@ -1,3 +1,8 @@
+---
+PermaID: 1000206
+Name: FastCrud
+---
+
 # Dapper.FastCrud
 
 ## Overview

@@ -1,3 +1,8 @@
+---
+PermaID: 1000204
+Name: Contrib Third Party Library
+---
+
 # Dapper.Contrib
 
 ## Overview

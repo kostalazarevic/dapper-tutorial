@@ -1,3 +1,8 @@
+---
+PermaID: 1000190
+Name: Data Annotation Table
+---
+
 # Dapper Contrib - Data Annotation - Table
 
 ## Description

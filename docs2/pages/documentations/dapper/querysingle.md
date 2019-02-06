@@ -1,3 +1,8 @@
+---
+PermaID: 1000177
+Name: QuerySingle
+---
+
 # Dapper - QuerySingle 
 
 ## Description

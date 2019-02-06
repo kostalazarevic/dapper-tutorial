@@ -1,3 +1,8 @@
+---
+PermaID: 1000178
+Name: QuerySingleOrDefault
+---
+
 # Dapper - QuerySingleOrDefault
 
 ## Description

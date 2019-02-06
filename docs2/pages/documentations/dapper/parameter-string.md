@@ -1,3 +1,8 @@
+---
+PermaID: 1000172
+Name: Parameter String
+---
+
 # Dapper - Parameter String 
 
 ## Description

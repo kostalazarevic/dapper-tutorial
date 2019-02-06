@@ -1,3 +1,8 @@
+---
+PermaID: 1000196
+Name: Insert
+---
+
 # Dapper Contrib - Insert
 
 ## Description

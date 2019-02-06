@@ -1,3 +1,8 @@
+---
+PermaID: 1000193
+Name: DeleteAll
+---
+
 # Dapper Contrib - DeleteAll
 
 ## Description

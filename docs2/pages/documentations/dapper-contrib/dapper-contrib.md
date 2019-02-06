@@ -1,3 +1,8 @@
+---
+PermaID: 1000186
+Name: Contrib
+---
+
 # Dapper Contrib
 
 ## What's Dapper Contrib?

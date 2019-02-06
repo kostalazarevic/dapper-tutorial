@@ -1,3 +1,8 @@
+---
+PermaID: 1000213
+Name: Third Party Library
+---
+
 # Dapper - Third Party Library
 Dapper Third Party Library allow you to extend dapper functionality which is not available in the core Dapper library, for example, basic CRUD operations, multi-mapping, manual mapping and convention based mapping, etc.
 

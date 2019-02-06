@@ -1,3 +1,8 @@
+---
+PermaID: 1000176
+Name: QueryMultiple
+---
+
 # Dapper - QueryMultiple 
 
 ## Description

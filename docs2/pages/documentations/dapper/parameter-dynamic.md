@@ -1,3 +1,8 @@
+---
+PermaID: 1000170
+Name: Parameter Dynamic
+---
+
 # Dapper - Parameter Dynamic
 
 ## Description

@@ -1,3 +1,8 @@
+---
+PermaID: 1000211
+Name: SimpleCrud
+---
+
 # Dapper.SimpleCRUD
 
 ## Overview

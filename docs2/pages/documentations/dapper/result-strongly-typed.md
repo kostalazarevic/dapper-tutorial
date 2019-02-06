@@ -1,3 +1,8 @@
+---
+PermaID: 1000183
+Name: Result Strongly Typed
+---
+
 # Dapper - Result Strongly Typed 
 
 ## Description

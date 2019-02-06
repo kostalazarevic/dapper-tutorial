@@ -1,3 +1,8 @@
+---
+PermaID: 1000189
+Name: Data Annotation Key
+---
+
 # Dapper Contrib - Data Annotation - Key
 
 ## Description
