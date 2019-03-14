@@ -58,7 +58,7 @@ string sql = "SELECT * FROM OrderDetails WHERE OrderDetailID = @OrderDetailID;";
 
 using (var connection = new SqlCeConnection("Data Source=SqlCe_W3Schools.sdf"))
 {
-	var orderDetail = connection.QueryFirst(sql, new {OrderDetailID = 1});
+	var orderDetail = connection.QueryFirst<OrderDetail>(sql, new {OrderDetailID = 1});
 
 	FiddleHelper.WriteTable(orderDetail);
 }
