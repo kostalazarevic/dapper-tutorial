@@ -1,6 +1,7 @@
 ---
 PermaID: 1000174
 Name: QueryFirst
+IsUpdated: 1
 ---
 
 # Dapper - QueryFirst 
