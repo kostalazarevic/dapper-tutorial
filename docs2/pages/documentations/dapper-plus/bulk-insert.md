@@ -19,7 +19,7 @@ INSERT a single entity with Bulk Operation.
 ```csharp
 DapperPlusManager.Entity<Customer>().Table("Customers"); 
 
-using (var connection = new SqlCeConnection("Data Source=SqlCe_W3Schools.sdf"))
+using (var connection = new SqlCeConnection(FiddleHelper.GetConnectionStringSqlServerW3Schools()))
 {
 	connection.BulkInsert(new List<Customer>() { new Customer() { CustomerName = "ExampleBulkInsert", ContactName = "Example Name :" +  1}});
 }		
@@ -32,7 +32,7 @@ INSERT many entities with Bulk Operation.
 ```csharp
 DapperPlusManager.Entity<Customer>().Table("Customers"); 
 
-using (var connection = new SqlCeConnection("Data Source=SqlCe_W3Schools.sdf"))
+using (var connection = new SqlCeConnection(FiddleHelper.GetConnectionStringSqlServerW3Schools()))
 {
 	connection.BulkInsert(customers);
 }
@@ -46,7 +46,7 @@ INSERT entities with a one to one relation with Bulk Operation.
 DapperPlusManager.Entity<Supplier>().Table("Suppliers").Identity(x => x.SupplierID);
 DapperPlusManager.Entity<Product>().Table("Products").Identity(x => x.ProductID);
 
-using (var connection = new SqlCeConnection("Data Source=SqlCe_W3Schools.sdf"))
+using (var connection = new SqlCeConnection(FiddleHelper.GetConnectionStringSqlServerW3Schools()))
 {	
 	connection.BulkInsert(suppliers).ThenForEach(x => x.Product.SupplierID = x.SupplierID).ThenBulkInsert(x => x.Product);
 }	
@@ -60,7 +60,7 @@ INSERT entities with a one to many relation with Bulk Operation.
 DapperPlusManager.Entity<Supplier>().Table("Suppliers").Identity(x => x.SupplierID); 
 DapperPlusManager.Entity<Product>().Table("Products").Identity(x => x.ProductID); 	
 
-using (var connection = new SqlCeConnection("Data Source=SqlCe_W3Schools.sdf"))
+using (var connection = new SqlCeConnection(FiddleHelper.GetConnectionStringSqlServerW3Schools()))
 {	
 	connection.BulkInsert(suppliers).ThenForEach(x => x.Products.ForEach(y => y.SupplierID =  x.SupplierID)).ThenBulkInsert(x => x.Products);
 }
