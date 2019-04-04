@@ -19,7 +19,7 @@ MERGE a single entity with Bulk Operation.
 ```csharp
 DapperPlusManager.Entity<Customer>().Table("Customers"); 
 
-using (var connection = new SqlCeConnection("Data Source=SqlCe_W3Schools.sdf"))
+using (var connection = new SqlConnection(FiddleHelper.GetConnectionStringSqlServerW3Schools()))
 {
 	connection.BulkMerge(new List<Customer>() { new Customer() { CustomerName = "ExampleBulkMerge", ContactName = "Example Name :" +  1}});
 }		
@@ -32,7 +32,7 @@ MERGE many entities with Bulk Operation.
 ```csharp
 DapperPlusManager.Entity<Customer>().Table("Customers"); 
 
-using (var connection = new SqlCeConnection("Data Source=SqlCe_W3Schools.sdf"))
+using (var connection = new SqlConnection(FiddleHelper.GetConnectionStringSqlServerW3Schools()))
 {
 	connection.BulkMerge(customers);
 }
@@ -46,7 +46,7 @@ MERGE entities with a one to one relation with Bulk Operation.
 DapperPlusManager.Entity<Supplier>().Table("Suppliers").Identity(x => x.SupplierID);
 DapperPlusManager.Entity<Product>().Table("Products").Identity(x => x.ProductID);
 
-using (var connection = new SqlCeConnection("Data Source=SqlCe_W3Schools.sdf"))
+using (var connection = new SqlConnection(FiddleHelper.GetConnectionStringSqlServerW3Schools()))
 {	
 	connection.BulkMerge(suppliers).ThenForEach(x => x.Product.SupplierID = x.SupplierID).ThenBulkMerge(x => x.Product);
 }
@@ -60,7 +60,7 @@ MERGE entities with a one to many relation with Bulk Operation.
 DapperPlusManager.Entity<Supplier>().Table("Suppliers").Identity(x => x.SupplierID);
 DapperPlusManager.Entity<Product>().Table("Products").Identity(x => x.ProductID);
 
-using (var connection = new SqlCeConnection("Data Source=SqlCe_W3Schools.sdf"))
+using (var connection = new SqlConnection(FiddleHelper.GetConnectionStringSqlServerW3Schools()))
 {
 	connection.BulkMerge(suppliers).ThenForEach(x => x.Products.ForEach(y => y.SupplierID =  x.SupplierID)).ThenBulkMerge(x => x.Products);
 }

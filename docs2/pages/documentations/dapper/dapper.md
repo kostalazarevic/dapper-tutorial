@@ -42,7 +42,7 @@ string sqlOrderDetails = "SELECT TOP 5 * FROM OrderDetails;";
 string sqlOrderDetail = "SELECT * FROM OrderDetails WHERE OrderDetailID = @OrderDetailID;";
 string sqlCustomerInsert = "INSERT INTO Customers (CustomerName) Values (@CustomerName);";
 
-using (var connection = new SqlCeConnection("Data Source=SqlCe_W3Schools.sdf"))
+using (var connection = new SqlConnection(FiddleHelper.GetConnectionStringSqlServerW3Schools()))
 {
 	var orderDetails = connection.Query<OrderDetail>(sqlOrderDetails).ToList();
 	var orderDetail = connection.QueryFirstOrDefault<OrderDetail>(sqlOrderDetail, new {OrderDetailID = 1});
@@ -103,7 +103,7 @@ The result returned by queries method can be mapped to multiple types:
 ```csharp
 string sqlOrderDetails = "SELECT TOP 10 * FROM OrderDetails;";
 
-using (var connection = new SqlCeConnection("Data Source=SqlCe_W3Schools.sdf"))
+using (var connection = new SqlConnection(FiddleHelper.GetConnectionStringSqlServerW3Schools()))
 {
 	var anonymousList = connection.Query(sqlOrderDetails).ToList();
 	var orderDetails = connection.Query<OrderDetail>(sqlOrderDetails).ToList();

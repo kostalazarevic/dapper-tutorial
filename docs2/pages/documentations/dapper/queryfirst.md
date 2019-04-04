@@ -41,7 +41,7 @@ Execute a query and map the first result to a dynamic list.
 ```csharp
 string sql = "SELECT * FROM OrderDetails WHERE OrderDetailID = @OrderDetailID;";
 
-using (var connection = new SqlCeConnection("Data Source=SqlCe_W3Schools.sdf"))
+using (var connection = new SqlConnection(FiddleHelper.GetConnectionStringSqlServerW3Schools()))
 {
 	var orderDetail = connection.QueryFirst(sql, new {OrderDetailID = 1});
 
@@ -57,7 +57,7 @@ Execute a query and map the first result to a strongly typed list.
 ```csharp
 string sql = "SELECT * FROM OrderDetails WHERE OrderDetailID = @OrderDetailID;";
 
-using (var connection = new SqlCeConnection("Data Source=SqlCe_W3Schools.sdf"))
+using (var connection = new SqlConnection(FiddleHelper.GetConnectionStringSqlServerW3Schools()))
 {
 	var orderDetail = connection.QueryFirst<OrderDetail>(sql, new {OrderDetailID = 1});
 

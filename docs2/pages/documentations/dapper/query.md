@@ -34,7 +34,7 @@ Raw SQL query can be executed using Query method and map the result to a dynamic
 ```csharp
 string sql = "SELECT TOP 10 * FROM OrderDetails";
 
-using (var connection = new SqlCeConnection("Data Source=SqlCe_W3Schools.sdf"))
+using (var connection = new SqlConnection(FiddleHelper.GetConnectionStringSqlServerW3Schools()))
 {	
 	var orderDetail = connection.Query(sql).FirstOrDefault();
 
@@ -50,7 +50,7 @@ Raw SQL query can be executed using Query method and map the result to a strongl
 ```csharp
 string sql = "SELECT TOP 10 * FROM OrderDetails";
 
-using (var connection = new SqlCeConnection("Data Source=SqlCe_W3Schools.sdf"))
+using (var connection = new SqlConnection(FiddleHelper.GetConnectionStringSqlServerW3Schools()))
 {			
 	var orderDetails = connection.Query<OrderDetail>(sql).ToList();
 
@@ -91,7 +91,7 @@ Raw SQL query can be executed using Query method and map the result to a strongl
 ```csharp
 string sql = "SELECT TOP 10 * FROM Orders AS A INNER JOIN OrderDetails AS B ON A.OrderID = B.OrderID;";
 
-using (var connection = new SqlCeConnection("Data Source=SqlCe_W3Schools.sdf"))
+using (var connection = new SqlConnection(FiddleHelper.GetConnectionStringSqlServerW3Schools()))
 {			
 	var orderDictionary = new Dictionary<int, Order>();
 

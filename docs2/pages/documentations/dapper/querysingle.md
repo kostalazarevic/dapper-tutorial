@@ -40,7 +40,7 @@ Execute a query and map the first result to a dynamic list, and throws an except
 ```csharp
 string sql = "SELECT * FROM OrderDetails WHERE OrderDetailID = @OrderDetailID;";
 
-using (var connection = new SqlCeConnection("Data Source=SqlCe_W3Schools.sdf"))
+using (var connection = new SqlConnection(FiddleHelper.GetConnectionStringSqlServerW3Schools()))
 {	
 	var orderDetail = connection.QuerySingle(sql, new {OrderDetailID = 1});
 
@@ -55,7 +55,7 @@ Execute a query and map the first result to a strongly typed list, and throws an
 ```csharp
 string sql = "SELECT * FROM OrderDetails WHERE OrderDetailID = @OrderDetailID;";
 
-using (var connection = new SqlCeConnection("Data Source=SqlCe_W3Schools.sdf"))
+using (var connection = new SqlConnection(FiddleHelper.GetConnectionStringSqlServerW3Schools()))
 {			
 	var orderDetail = connection.QuerySingle<OrderDetail>(sql, new {OrderDetailID = 1});
 

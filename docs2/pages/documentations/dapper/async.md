@@ -22,7 +22,7 @@ Dapper also extend the IDbConnection interface with Async (asynchronous) methods
 ```csharp
 string sql = "INSERT INTO Customers (CustomerName) Values (@CustomerName);";
 
-using (var connection = new SqlCeConnection("Data Source=SqlCe_W3Schools.sdf"))
+using (var connection = new SqlConnection(FiddleHelper.GetConnectionStringSqlServerW3Schools()))
 {
 	var affectedRows = connection.ExecuteAsync(sql, new {CustomerName = "Mark"}).Result;
 
@@ -39,7 +39,7 @@ using (var connection = new SqlCeConnection("Data Source=SqlCe_W3Schools.sdf"))
 ```csharp
 string sql = "SELECT TOP 10 * FROM OrderDetails";
 
-using (var connection = new SqlCeConnection("Data Source=SqlCe_W3Schools.sdf"))
+using (var connection = new SqlConnection(FiddleHelper.GetConnectionStringSqlServerW3Schools()))
 {
 	var orderDetails = connection.QueryAsync<OrderDetail>(sql).Result.ToList();
 
@@ -54,7 +54,7 @@ using (var connection = new SqlCeConnection("Data Source=SqlCe_W3Schools.sdf"))
 ```csharp
 string sql = "SELECT * FROM OrderDetails WHERE OrderDetailID = @OrderDetailID;";
 
-using (var connection = new SqlCeConnection("Data Source=SqlCe_W3Schools.sdf"))
+using (var connection = new SqlConnection(FiddleHelper.GetConnectionStringSqlServerW3Schools()))
 {
 	var orderDetail = connection.QueryFirstAsync<OrderDetail>(sql, new {OrderDetailID = 1}).Result;
 
@@ -67,7 +67,7 @@ using (var connection = new SqlCeConnection("Data Source=SqlCe_W3Schools.sdf"))
 ```csharp
 string sql = "SELECT * FROM OrderDetails WHERE OrderDetailID = @OrderDetailID;";
 
-using (var connection = new SqlCeConnection("Data Source=SqlCe_W3Schools.sdf"))
+using (var connection = new SqlConnection(FiddleHelper.GetConnectionStringSqlServerW3Schools()))
 {
 	var orderDetail = connection.QueryFirstOrDefaultAsync<OrderDetail>(sql, new {OrderDetailID = 1}).Result;
 
@@ -80,7 +80,7 @@ using (var connection = new SqlCeConnection("Data Source=SqlCe_W3Schools.sdf"))
 ```csharp
 string sql = "SELECT * FROM OrderDetails WHERE OrderDetailID = @OrderDetailID;";
 
-using (var connection = new SqlCeConnection("Data Source=SqlCe_W3Schools.sdf"))
+using (var connection = new SqlConnection(FiddleHelper.GetConnectionStringSqlServerW3Schools()))
 {			
 	var orderDetail = connection.QuerySingleOrDefaultAsync<OrderDetail>(sql, new {OrderDetailID = 1}).Result;
 
@@ -93,7 +93,7 @@ using (var connection = new SqlCeConnection("Data Source=SqlCe_W3Schools.sdf"))
 ```csharp
 string sql = "SELECT * FROM OrderDetails WHERE OrderDetailID = @OrderDetailID;";
 
-using (var connection = new SqlCeConnection("Data Source=SqlCe_W3Schools.sdf"))
+using (var connection = new SqlConnection(FiddleHelper.GetConnectionStringSqlServerW3Schools()))
 {
 	var orderDetail = connection.QuerySingleOrDefaultAsync<OrderDetail>(sql, new {OrderDetailID = 1}).Result;
 

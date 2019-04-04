@@ -47,25 +47,25 @@ DapperPlusManager.Entity<Supplier>().Table("Suppliers").Identity(x => x.Supplier
 DapperPlusManager.Entity<Product>().Table("Products").Identity(x => x.ProductID);
 
 // STEP BULKINSERT
-using (var connection = new SqlCeConnection("Data Source=SqlCe_W3Schools.sdf"))
+using (var connection = new SqlConnection(FiddleHelper.GetConnectionStringSqlServerW3Schools()))
 {
 	connection.BulkInsert(suppliers).ThenForEach(x => x.Products.ForEach(y => y.SupplierID =  x.SupplierID)).ThenBulkInsert(x => x.Products);
 }
 
 // STEP BULKUPDATE
-using (var connection = new SqlCeConnection("Data Source=SqlCe_W3Schools.sdf"))
+using (var connection = new SqlConnection(FiddleHelper.GetConnectionStringSqlServerW3Schools()))
 {
 	connection.BulkUpdate(suppliers, x => x.Products);
 }
 
 // STEP BULKMERGE
-using (var connection = new SqlCeConnection("Data Source=SqlCe_W3Schools.sdf"))
+using (var connection = new SqlConnection(FiddleHelper.GetConnectionStringSqlServerW3Schools()))
 {
 	connection.BulkMerge(suppliers).ThenForEach(x => x.Products.ForEach(y => y.SupplierID =  x.SupplierID)).ThenBulkMerge(x => x.Products);
 }
 
 // STEP BULKDELETE
-using (var connection = new SqlCeConnection("Data Source=SqlCe_W3Schools.sdf"))
+using (var connection = new SqlConnection(FiddleHelper.GetConnectionStringSqlServerW3Schools()))
 {
 	connection.BulkDelete(suppliers.SelectMany(x => x.Products)).BulkDelete(suppliers);
 }

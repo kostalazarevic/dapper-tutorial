@@ -42,7 +42,7 @@ string sqlOrderDetail = "SELECT * FROM OrderDetails WHERE OrderDetailID = @Order
 string sqlCustomerInsert = "INSERT INTO Customers (CustomerName) Values (@CustomerName);";
 
 
-using (var connection = new SqlCeConnection("Data Source=SqlCe_W3Schools.sdf"))
+using (var connection = new SqlConnection(FiddleHelper.GetConnectionStringSqlServerW3Schools()))
 {
 	var orderDetails = connection.Query(sqlOrderDetails).ToList();
 	var orderDetail = connection.QueryFirstOrDefault(sqlOrderDetail, new {OrderDetailID = 1});
@@ -96,7 +96,7 @@ The result returned by queries method can be mapped to multiple types:
 {% include template-example.html %} {% highlight csharp %}
 string sqlOrderDetails = "SELECT * FROM OrderDetails;";
 
-using (var connection = new SqlCeConnection("Data Source=SqlCe_W3Schools.sdf"))
+using (var connection = new SqlConnection(FiddleHelper.GetConnectionStringSqlServerW3Schools()))
 {
 	var anonymousList = connection.Query(sqlOrderDetails).ToList();
 	var orderDetails = connection.Query<OrderDetail>(sqlOrderDetails).ToList();
