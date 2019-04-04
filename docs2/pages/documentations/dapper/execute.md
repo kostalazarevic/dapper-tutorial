@@ -76,7 +76,7 @@ Execute the INSERT Statement a single time.
 ```csharp
 string sql = "INSERT INTO Customers (CustomerName) Values (@CustomerName);";
 
-using (var connection = new SqlCeConnection("Data Source=SqlCe_W3Schools.sdf"))
+using (var connection = new SqlConnection(FiddleHelper.GetConnectionStringSqlServerW3Schools()))
 {
 	var affectedRows = connection.Execute(sql, new {CustomerName = "Mark"});
 
@@ -96,7 +96,7 @@ Execute the INSERT Statement multiple times. Once for every object in the array 
 ```csharp
 string sql = "INSERT INTO Customers (CustomerName) Values (@CustomerName);";
 
-using (var connection = new SqlCeConnection("Data Source=SqlCe_W3Schools.sdf"))
+using (var connection = new SqlConnection(FiddleHelper.GetConnectionStringSqlServerW3Schools()))
 {
 	connection.Open();
 
@@ -122,7 +122,7 @@ Execute the UPDATE Statement a single time.
 ```csharp
 string sql = "UPDATE Categories SET Description = @Description WHERE CategoryID = @CategoryID;";
 
-using (var connection = new SqlCeConnection("Data Source=SqlCe_W3Schools.sdf"))
+using (var connection = new SqlConnection(FiddleHelper.GetConnectionStringSqlServerW3Schools()))
 {			
 	var affectedRows = connection.Execute(sql,new {CategoryID = 1, Description = "Soft drinks, coffees, teas, beers, mixed drinks, and ales"});
 
@@ -138,7 +138,7 @@ Execute the UPDATE Statement multiple times. Once for every object in the array 
 ```csharp
 string sql = "UPDATE Categories SET Description = @Description WHERE CategoryID = @CategoryID;";
 
-using (var connection = new SqlCeConnection("Data Source=SqlCe_W3Schools.sdf"))
+using (var connection = new SqlConnection(FiddleHelper.GetConnectionStringSqlServerW3Schools()))
 {	
 	var affectedRows = connection.Execute(sql,
 	new[]
@@ -161,7 +161,7 @@ Execute the DELETE Statement a single time.
 ```csharp
 string sql = "DELETE FROM Customers WHERE CustomerID = @CustomerID";
 
-using (var connection = new SqlCeConnection("Data Source=SqlCe_W3Schools.sdf"))
+using (var connection = new SqlConnection(FiddleHelper.GetConnectionStringSqlServerW3Schools()))
 {			
 	var affectedRows = connection.Execute(sql, new {CustomerID = 1});
 
