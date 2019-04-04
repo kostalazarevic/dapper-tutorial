@@ -14,7 +14,7 @@ Execute a single time a SQL Command.
 ```csharp
 string sql = "INSERT INTO Customers (CustomerName) Values (@CustomerName);";
 
-using (var connection = new SqlCeConnection("Data Source=SqlCe_W3Schools.sdf"))
+using (var connection = new SqlConnection(FiddleHelper.GetConnectionStringSqlServerW3Schools()))
 {
 	var affectedRows = connection.Execute(sql, new {CustomerName = "Mark"});
 
@@ -34,7 +34,7 @@ Execute many times a SQL Command
 ```csharp
 string sql = "INSERT INTO Customers (CustomerName) Values (@CustomerName);";
 
-using (var connection = new SqlCeConnection("Data Source=SqlCe_W3Schools.sdf"))
+using (var connection = new SqlConnection(FiddleHelper.GetConnectionStringSqlServerW3Schools()))
 {			
 	var affectedRows = connection.Execute(sql,
 	new[]
