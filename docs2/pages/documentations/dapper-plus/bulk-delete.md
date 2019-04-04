@@ -19,7 +19,7 @@ DELETE a single entity with Bulk Operation.
 ```csharp	
 DapperPlusManager.Entity<Customer>().Table("Customers").Key("CustomerID");
 
-using (var connection = new SqlCeConnection(FiddleHelper.GetConnectionStringSqlServerW3Schools()))
+using (var connection = new SqlConnection(FiddleHelper.GetConnectionStringSqlServerW3Schools()))
 {
 	connection.BulkDelete(connection.Query<Customer>("Select * FROM CUSTOMERS WHERE CustomerID in (53,57) ").ToList());
 }	
@@ -32,7 +32,7 @@ DELETE many entities with Bulk Operation.
 ```csharp
 DapperPlusManager.Entity<Customer>().Table("Customers").Key("CustomerID");
 
-using (var connection = new SqlCeConnection(FiddleHelper.GetConnectionStringSqlServerW3Schools()))
+using (var connection = new SqlConnection(FiddleHelper.GetConnectionStringSqlServerW3Schools()))
 {
 	connection.BulkDelete(connection.Query<Customer>("Select * FROM CUSTOMERS WHERE CustomerID in (53,57) ").ToList());
 }	
@@ -46,7 +46,7 @@ DELETE entities with a one to one relation with Bulk Operation.
 DapperPlusManager.Entity<Supplier>().Table("Suppliers").Identity(x => x.SupplierID);
 DapperPlusManager.Entity<Product>().Table("Products").Identity(x => x.ProductID);
 
-using (var connection = new SqlCeConnection(FiddleHelper.GetConnectionStringSqlServerW3Schools()))
+using (var connection = new SqlConnection(FiddleHelper.GetConnectionStringSqlServerW3Schools()))
 {
 	connection.BulkDelete(suppliers.Select(x => x.Product)).BulkDelete(suppliers);
 }
@@ -60,7 +60,7 @@ DELETE entities with a one to many relation with Bulk Operation.
 DapperPlusManager.Entity<Supplier>().Table("Suppliers").Identity(x => x.SupplierID);
 DapperPlusManager.Entity<Product>().Table("Products").Identity(x => x.ProductID);
 
-using (var connection = new SqlCeConnection(FiddleHelper.GetConnectionStringSqlServerW3Schools()))
+using (var connection = new SqlConnection(FiddleHelper.GetConnectionStringSqlServerW3Schools()))
 {
 	connection.BulkDelete(suppliers.SelectMany(x => x.Products)).BulkDelete(suppliers);
 }
