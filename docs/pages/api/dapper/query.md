@@ -35,7 +35,7 @@ Raw SQL query can be executed using Query method and map the result to a dynamic
 {% include template-example.html %} {% highlight csharp %}
 string sql = "SELECT * FROM OrderDetails";
 
-using (var connection = new SqlCeConnection("Data Source=SqlCe_W3Schools.sdf"))
+using (var connection = new SqlConnection(FiddleHelper.GetConnectionStringSqlServerW3Schools()))
 {
 	connection.Open();
 	
@@ -53,7 +53,7 @@ Raw SQL query can be executed using Query method and map the result to a strongl
 {% include template-example.html %} {% highlight csharp %}
 string sql = "SELECT * FROM OrderDetails";
 
-using (var connection = new SqlCeConnection("Data Source=SqlCe_W3Schools.sdf"))
+using (var connection = new SqlConnection(FiddleHelper.GetConnectionStringSqlServerW3Schools()))
 {
 	connection.Open();
 	
@@ -94,7 +94,7 @@ Raw SQL query can be executed using Query method and map the result to a strongl
 {% include template-example.html %} {% highlight csharp %}
 string sql = "SELECT * FROM Orders AS A INNER JOIN OrderDetails AS B ON A.OrderID = B.OrderID;";
 
-using (var connection = new SqlCeConnection("Data Source=SqlCe_W3Schools.sdf"))
+using (var connection = new SqlConnection(FiddleHelper.GetConnectionStringSqlServerW3Schools()))
 {
     connection.Open();
     

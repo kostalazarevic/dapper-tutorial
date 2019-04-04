@@ -24,7 +24,7 @@ Query method can execute a query and map the result to a strongly typed list.
 {% include template-example.html %} {% highlight csharp %}
 string sql = "SELECT * FROM OrderDetails";
 
-using (var connection = new SqlCeConnection("Data Source=SqlCe_W3Schools.sdf"))
+using (var connection = new SqlConnection(FiddleHelper.GetConnectionStringSqlServerW3Schools()))
 {
 	connection.Open();
 	
@@ -41,7 +41,7 @@ QueryFirst method can execute a query and map the first result to a strongly typ
 {% include template-example.html %} {% highlight csharp %}
 string sql = "SELECT * FROM OrderDetails WHERE OrderDetailID = @OrderDetailID;";
 
-using (var connection = new SqlCeConnection("Data Source=SqlCe_W3Schools.sdf"))
+using (var connection = new SqlConnection(FiddleHelper.GetConnectionStringSqlServerW3Schools()))
 {
 	connection.Open();
 	
@@ -58,7 +58,7 @@ QueryFirstOrDefault method can execute a query and map the first result to a str
 {% include template-example.html %} {% highlight csharp %}
 string sql = "SELECT * FROM OrderDetails WHERE OrderDetailID = @OrderDetailID;";
 
-using (var connection = new SqlCeConnection("Data Source=SqlCe_W3Schools.sdf"))
+using (var connection = new SqlConnection(FiddleHelper.GetConnectionStringSqlServerW3Schools()))
 {
 	connection.Open();
 	
@@ -76,7 +76,7 @@ QuerySingle method can execute a query and map the first result to a strongly ty
 {% include template-example.html %} {% highlight csharp %}
 string sql = "SELECT * FROM OrderDetails WHERE OrderDetailID = @OrderDetailID;";
 
-using (var connection = new SqlCeConnection("Data Source=SqlCe_W3Schools.sdf"))
+using (var connection = new SqlConnection(FiddleHelper.GetConnectionStringSqlServerW3Schools()))
 {
 	connection.Open();
 	
@@ -93,7 +93,7 @@ QuerySingleOrDefault method can execute a query and map the first result to a st
 {% include template-example.html %} {% highlight csharp %}
 string sql = "SELECT * FROM OrderDetails WHERE OrderDetailID = @OrderDetailID;";
 
-using (var connection = new SqlCeConnection("Data Source=SqlCe_W3Schools.sdf"))
+using (var connection = new SqlConnection(FiddleHelper.GetConnectionStringSqlServerW3Schools()))
 {
 	connection.Open();
 	

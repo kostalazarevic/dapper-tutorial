@@ -15,7 +15,7 @@ Begin a new transaction from the connection and pass it in the transaction optio
 ```csharp
 string sql = "INSERT INTO Customers (CustomerName) Values (@CustomerName);";
 
-using (var connection = new SqlCeConnection("Data Source=SqlCe_W3Schools.sdf"))
+using (var connection = new SqlConnection(FiddleHelper.GetConnectionStringSqlServerW3Schools()))
 {
 	connection.Open();
 	

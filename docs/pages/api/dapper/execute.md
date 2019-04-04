@@ -81,7 +81,7 @@ Execute the INSERT Statement a single time.
 {% include template-example.html %} {% highlight csharp %}
 string sql = "INSERT INTO Customers (CustomerName) Values (@CustomerName);";
 
-using (var connection = new SqlCeConnection("Data Source=SqlCe_W3Schools.sdf"))
+using (var connection = new SqlConnection(FiddleHelper.GetConnectionStringSqlServerW3Schools()))
 {
 	connection.Open();
 	var affectedRows = connection.Execute(sql, new {CustomerName = "Mark"});
@@ -97,7 +97,7 @@ Execute the INSERT Statement multiple times. Once for every object in the array 
 {% include template-example.html %} {% highlight csharp %}
 string sql = "INSERT INTO Customers (CustomerName) Values (@CustomerName);";
 
-using (var connection = new SqlCeConnection("Data Source=SqlCe_W3Schools.sdf"))
+using (var connection = new SqlConnection(FiddleHelper.GetConnectionStringSqlServerW3Schools()))
 {
 	connection.Open();
 	
@@ -123,7 +123,7 @@ Execute the UPDATE Statement a single time.
 {% include template-example.html %} {% highlight csharp %}
 string sql = "UPDATE Categories SET Description = @Description WHERE CategoryID = @CategoryID;";
 
-using (var connection = new SqlCeConnection("Data Source=SqlCe_W3Schools.sdf"))
+using (var connection = new SqlConnection(FiddleHelper.GetConnectionStringSqlServerW3Schools()))
 {
 	connection.Open();
 	
@@ -142,7 +142,7 @@ Execute the UPDATE Statement multiple times. Once for every object in the array 
 {% include template-example.html %} {% highlight csharp %}
 string sql = "UPDATE Categories SET Description = @Description WHERE CategoryID = @CategoryID;";
 
-using (var connection = new SqlCeConnection("Data Source=SqlCe_W3Schools.sdf"))
+using (var connection = new SqlConnection(FiddleHelper.GetConnectionStringSqlServerW3Schools()))
 {
 	connection.Open();
 	
@@ -170,7 +170,7 @@ Execute the DELETE Statement a single time.
 {% include template-example.html %} {% highlight csharp %}
 string sql = "DELETE FROM Customers WHERE CustomerID = @CustomerID";
 
-using (var connection = new SqlCeConnection("Data Source=SqlCe_W3Schools.sdf"))
+using (var connection = new SqlConnection(FiddleHelper.GetConnectionStringSqlServerW3Schools()))
 {
 	connection.Open();
 	
@@ -189,7 +189,7 @@ Execute the DELETE Statement multiple times. Once for every object in the array 
 {% include template-example.html %} {% highlight csharp %}
 string sql = "DELETE FROM OrderDetails WHERE OrderDetailID = @OrderDetailID";
 
-using (var connection = new SqlCeConnection("Data Source=SqlCe_W3Schools.sdf"))
+using (var connection = new SqlConnection(FiddleHelper.GetConnectionStringSqlServerW3Schools()))
 {
 	connection.Open();
 	

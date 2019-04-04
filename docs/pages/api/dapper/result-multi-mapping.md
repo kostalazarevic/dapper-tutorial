@@ -43,7 +43,7 @@ Query method can execute a query and map the result to a strongly typed list wit
 {% include template-example.html %} {% highlight csharp %}
 string sql = "SELECT * FROM Orders AS A INNER JOIN OrderDetails AS B ON A.OrderID = B.OrderID;";
 
-using (var connection = new SqlCeConnection("Data Source=SqlCe_W3Schools.sdf"))
+using (var connection = new SqlConnection(FiddleHelper.GetConnectionStringSqlServerW3Schools()))
 {
     connection.Open();
     

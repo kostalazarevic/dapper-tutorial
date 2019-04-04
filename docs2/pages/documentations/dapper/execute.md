@@ -178,7 +178,7 @@ Execute the DELETE Statement multiple times. Once for every object in the array 
 ```csharp
 string sql = "DELETE FROM OrderDetails WHERE OrderDetailID = @OrderDetailID";
 
-using (var connection = new SqlCeConnection("Data Source=SqlCe_W3Schools.sdf"))
+using (var connection = new SqlConnection(FiddleHelper.GetConnectionStringSqlServerW3Schools()))
 {			
 	var affectedRows = connection.Execute(sql, 
 		new[]

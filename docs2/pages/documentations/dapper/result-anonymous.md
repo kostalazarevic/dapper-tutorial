@@ -23,7 +23,7 @@ Query method can execute a query and map the result to a dynamic list.
 ```csharp
 string sql = "SELECT TOP 10 * FROM OrderDetails";
 
-using (var connection = new SqlCeConnection("Data Source=SqlCe_W3Schools.sdf"))
+using (var connection = new SqlConnection(FiddleHelper.GetConnectionStringSqlServerW3Schools()))
 {			
 	var orderDetails = connection.QueryFirstOrDefault(sql);
 
@@ -39,7 +39,7 @@ QueryFirst method can execute a query and map the first result to a dynamic list
 ```csharp
 string sql = "SELECT * FROM OrderDetails WHERE OrderDetailID = @OrderDetailID;";
 
-using (var connection = new SqlCeConnection("Data Source=SqlCe_W3Schools.sdf"))
+using (var connection = new SqlConnection(FiddleHelper.GetConnectionStringSqlServerW3Schools()))
 {
 	var orderDetail = connection.QueryFirst(sql, new {OrderDetailID = 1});
 
@@ -54,7 +54,7 @@ QueryFirstOrDefault method can execute a query and map the first result to a dyn
 ```csharp
 string sql = "SELECT * FROM OrderDetails WHERE OrderDetailID = @OrderDetailID;";
 
-using (var connection = new SqlCeConnection("Data Source=SqlCe_W3Schools.sdf"))
+using (var connection = new SqlConnection(FiddleHelper.GetConnectionStringSqlServerW3Schools()))
 {			
 	var orderDetail = connection.QueryFirstOrDefault(sql, new {OrderDetailID = 1});
 
@@ -69,7 +69,7 @@ QuerySingle method can execute a query and map the first result to a dynamic lis
 ```csharp
 string sql = "SELECT * FROM OrderDetails WHERE OrderDetailID = @OrderDetailID;";
 
-using (var connection = new SqlCeConnection("Data Source=SqlCe_W3Schools.sdf"))
+using (var connection = new SqlConnection(FiddleHelper.GetConnectionStringSqlServerW3Schools()))
 {	
 	var orderDetail = connection.QuerySingle(sql, new {OrderDetailID = 1});
 
@@ -84,7 +84,7 @@ QuerySingleOrDefault method can execute a query and map the first result to a dy
 ```csharp
 string sql = "SELECT * FROM OrderDetails WHERE OrderDetailID = @OrderDetailID;";
 
-using (var connection = new SqlCeConnection("Data Source=SqlCe_W3Schools.sdf"))
+using (var connection = new SqlConnection(FiddleHelper.GetConnectionStringSqlServerW3Schools()))
 {
 	var orderDetail = connection.QuerySingleOrDefault(sql, new {OrderDetailID = 1});
 
