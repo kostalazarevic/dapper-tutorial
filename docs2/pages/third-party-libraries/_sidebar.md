@@ -1,0 +1,12 @@
+- Methods
+   - [Overview](third-party-library.md)
+   - [Dapper.Plus](dapper-plus-third-party-library.md)
+   - [Dapper-Async](dapper-async.md)
+   - [Dapper.Contrib](dapper-contrib-third-party-library.md)
+   - [DapperExtensions](dapper-extensions.md)
+   - [Dapper.FastCrud](dapper-fastcrud.md)
+   - [Dapper.FluentMap](dapper-fluentmap.md)
+   - [Dapper.Mapper](dapper-mapper.md)
+   - [Dapper.Rainbow](dapper-rainbow.md)
+   - [Dapper.SimpleCRUD](dapper-simplecrud.md)
+   - [Dapper.SimpleSave](dapper-simplesave.md)
